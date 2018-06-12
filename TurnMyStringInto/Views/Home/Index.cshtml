@@ -1,32 +1,38 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
+<input id="text" name="text" type="text" value="" />
+<button id="translate">Submit</button>
+<select class="form-control" id="translatorId">
+    <option value="klingon.json">Klingon</option>
+    <option value="yoda.json">Yoda</option>
+    <option value="leetspeak.json">leetspeak</option>
+</select>
 
-<form id="translate">
-    <input id="text" name="text" type="text" value="" />
-    <button type="submit">Submit</button>
-</form>
-<textarea id="area"></textarea>
+<h3><span id="message"></span></h3>
 @section scripts
 {
     <script>
         $(document).ready(function () {
-            $("#translate").on("submit", function()
+            var wynik;
+            $("#translate").on("click",function()
             {
+                var translatorType=$("#translatorId").val();
+                var textToTranslate=$("#text").val()
                 $.ajax({
-                    url: "http://api.funtranslations.com/translate/leetspeak.json?text="+$("#text").val(),
+                    url: "http://api.funtranslations.com/translate/"+translatorType+"?text=" +textToTranslate,
                     method: "GET",
-                    success:function(result)
-                    {
-                        alert(result.responseText)
-                        
+                    success: function (data) {
+                        wynik=data;
+                        $("#message").append(wynik.contents.translated);
                     },
-                    error: function (result) {
-                        alert(result.responseText)
-                    },
-
+                    error: function (data) {
+                        wynik = data.responseJSON;
+                    $("#message").append(wynik.error.message);
+                }
                 })
+
             })
-            })
+        })
     </script>
 }
