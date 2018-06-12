@@ -39,8 +39,15 @@
                         },
                         error: function (data) {
                             errorResponse = data.responseJSON;
+                            console.log(errorResponse)
                             $("span").html("");
                             $("#message").append(errorResponse.error.message);
+
+                            $.ajax({
+                                url: "/api/errors",
+                                method: "POST",
+                                data: errorResponse.error
+                            })
                         }
                     })
 

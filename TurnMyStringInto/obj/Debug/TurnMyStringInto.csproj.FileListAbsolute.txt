@@ -70,3 +70,11 @@ C:\Users\KOWAL\Desktop\TurnMyStringInto\TurnMyStringInto\obj\Debug\TurnMyStringI
 C:\Users\KOWAL\Desktop\TurnMyStringInto\TurnMyStringInto\obj\Debug\TurnMyStringInto.Migrations.TemplateModel.resources
 C:\Users\KOWAL\Desktop\TurnMyStringInto\TurnMyStringInto\obj\Debug\TurnMyStringInto.csproj.GenerateResource.Cache
 C:\Users\KOWAL\Desktop\TurnMyStringInto\TurnMyStringInto\obj\Debug\TurnMyStringInto.Migrations.InitialDatabaseModel.resources
+C:\Users\KOWAL\Desktop\TurnMyStringInto\TurnMyStringInto\bin\AutoMapper.dll
+C:\Users\KOWAL\Desktop\TurnMyStringInto\TurnMyStringInto\bin\System.Net.Http.Formatting.dll
+C:\Users\KOWAL\Desktop\TurnMyStringInto\TurnMyStringInto\bin\System.Web.Http.dll
+C:\Users\KOWAL\Desktop\TurnMyStringInto\TurnMyStringInto\bin\System.Web.Http.WebHost.dll
+C:\Users\KOWAL\Desktop\TurnMyStringInto\TurnMyStringInto\bin\AutoMapper.xml
+C:\Users\KOWAL\Desktop\TurnMyStringInto\TurnMyStringInto\bin\System.Net.Http.Formatting.xml
+C:\Users\KOWAL\Desktop\TurnMyStringInto\TurnMyStringInto\bin\System.Web.Http.xml
+C:\Users\KOWAL\Desktop\TurnMyStringInto\TurnMyStringInto\bin\System.Web.Http.WebHost.xml
