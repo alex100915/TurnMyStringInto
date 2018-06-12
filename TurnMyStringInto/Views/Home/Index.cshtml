@@ -24,22 +24,25 @@
 {
     <script>
             $(document).ready(function () {
-                var successResponse;
-                var errorResponse;
                 $("#translate").on("click", function () {
                     var translatorType = $("#translatorId").val();
                     var textToTranslate = $("#text").val()
                     $.ajax({
                         url: "http://api.funtranslations.com/translate/" + translatorType + "?text=" + textToTranslate,
                         method: "GET",
-                        success: function (data) {
-                            successResponse = data;
+                        cache: false,
+                        success: function (result) {
                             $("span").html("");
-                            $("#message").append(successResponse.contents.translated);
+                            $("#message").append(result.contents.translated);
+
+                            $.ajax({
+                                url: "/api/translations",
+                                method: "POST",
+                                data: result
+                            })
                         },
-                        error: function (data) {
-                            errorResponse = data.responseJSON;
-                            console.log(errorResponse)
+                        error: function (result) {
+                            var errorResponse = result.responseJSON;
                             $("span").html("");
                             $("#message").append(errorResponse.error.message);
 
