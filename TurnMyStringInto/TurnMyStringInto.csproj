@@ -177,10 +177,18 @@
     <Compile Include="Migrations\201806110828290_TemplateModel.Designer.cs">
       <DependentUpon>201806110828290_TemplateModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806120826540_InitialDatabaseModel.cs" />
+    <Compile Include="Migrations\201806120826540_InitialDatabaseModel.Designer.cs">
+      <DependentUpon>201806120826540_InitialDatabaseModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Contents.cs" />
+    <Compile Include="Models\Error.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Success.cs" />
+    <Compile Include="Models\Translation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -257,6 +265,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201806110828290_TemplateModel.resx">
       <DependentUpon>201806110828290_TemplateModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806120826540_InitialDatabaseModel.resx">
+      <DependentUpon>201806120826540_InitialDatabaseModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

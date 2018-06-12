@@ -69,3 +69,4 @@ C:\Users\KOWAL\Desktop\TurnMyStringInto\TurnMyStringInto\obj\Debug\TurnMyStringI
 C:\Users\KOWAL\Desktop\TurnMyStringInto\TurnMyStringInto\obj\Debug\TurnMyStringInto.pdb
 C:\Users\KOWAL\Desktop\TurnMyStringInto\TurnMyStringInto\obj\Debug\TurnMyStringInto.Migrations.TemplateModel.resources
 C:\Users\KOWAL\Desktop\TurnMyStringInto\TurnMyStringInto\obj\Debug\TurnMyStringInto.csproj.GenerateResource.Cache
+C:\Users\KOWAL\Desktop\TurnMyStringInto\TurnMyStringInto\obj\Debug\TurnMyStringInto.Migrations.InitialDatabaseModel.resources

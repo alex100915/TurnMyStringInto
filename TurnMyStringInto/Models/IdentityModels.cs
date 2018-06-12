@@ -20,6 +20,10 @@ namespace TurnMyStringInto.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        public DbSet<Translation> Translations { get; set; }
+        public DbSet<Contents> Contents { get; set; }
+        public DbSet<Success> Successes { get; set; }
+        public DbSet<Error> Errors { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
