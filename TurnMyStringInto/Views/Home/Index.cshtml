@@ -2,59 +2,66 @@
     ViewBag.Title = "Home Page";
 }
 <p style="padding-top:5px"></p>
-<div class="form-group">
-    <div class="tt-container">
-        <input class="form-control" id="text" name="text" type="text" value="" />
+<form>
+    <div class="form-group">
+        <div class="tt-container">
+            <input class="form-control" id="text" type="text" value="" required />
+        </div>
     </div>
-</div>
 
-<div class="form-group">
-    <select class="form-control" id="translatorId">
-        <option value="klingon.json">Klingon</option>
-        <option value="yoda.json">Yoda</option>
-        <option value="leetspeak.json">leetspeak</option>
-    </select>
-</div>
-
-<button class="btn btn-primary" id="translate">Submit</button>
+    <div class="form-group">
+        <select class="form-control" id="translatorId">
+            <option value="klingon.json">Klingon</option>
+            <option value="yoda.json">Yoda</option>
+            <option value="leetspeak.json">leetspeak</option>
+        </select>
+    </div>
+</form>
+    <button class="btn btn-primary" id="translate">Submit</button>
 
 <h3><span id="message"></span></h3>
 
 @section scripts
 {
     <script>
-            $(document).ready(function () {
-                $("#translate").on("click", function () {
-                    var translatorType = $("#translatorId").val();
-                    var textToTranslate = $("#text").val()
-                    $.ajax({
-                        url: "http://api.funtranslations.com/translate/" + translatorType + "?text=" + textToTranslate,
-                        method: "GET",
-                        cache: false,
-                        success: function (result) {
-                            $("span").html("");
-                            $("#message").append(result.contents.translated);
+        $(document).ready(function () {
+            
+            $("#translate").on("click", function () {
 
-                            $.ajax({
-                                url: "/api/translations",
-                                method: "POST",
-                                data: result
-                            })
-                        },
-                        error: function (result) {
-                            var errorResponse = result.responseJSON;
-                            $("span").html("");
-                            $("#message").append(errorResponse.error.message);
+                    if(!$("form").valid()) 
+                        return;
 
-                            $.ajax({
-                                url: "/api/errors",
-                                method: "POST",
-                                data: errorResponse.error
-                            })
-                        }
-                    })
+                        var translatorType = $("#translatorId").val();
+                        var textToTranslate = $("#text").val()
 
+                        $.ajax({
+                            url: "http://api.funtranslations.com/translate/" + translatorType + "?text=" + textToTranslate,
+                            method: "GET",
+                            cache: false,
+                            success: function (result) {
+                                $("span").html("");
+                                $("#message").append(result.contents.translated);
+
+                                $.ajax({
+                                    url: "/api/translations",
+                                    method: "POST",
+                                    data: result
+                                })
+                            },
+                            error: function (result) {
+                                var errorResponse = result.responseJSON;
+                                $("span").html("");
+                                $("#message").append(errorResponse.error.message);
+
+                                $.ajax({
+                                    url: "/api/errors",
+                                    method: "POST",
+                                    data: errorResponse.error
+                                })
+                            }
+                        })
                 })
+            
             })
     </script>
 }
